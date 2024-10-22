@@ -1,6 +1,6 @@
 <?php
 // Carica il file xml
-$xml = simplexml_load_file('art_2021-03_003.xml');
+$xml = simplexml_load_file('');
 
 // Crea le cartelle per articoli e immagini se non esistono
 $articlesFolder = 'articles';
@@ -23,10 +23,10 @@ foreach ($xml->content as $content){
         $value = (string)$component; // Estrae il valore del componente
 
         switch ($group) {
-            case 'polopoly.Content':
+            case 'Content':
                 $data['Titolo'] = $value;
                 break;
-            case 'sourceContentId':
+            case 'ContentId':
                 $articoloID = $value;
                 $data['ID articolo'] = $articoloID;
                 break;
